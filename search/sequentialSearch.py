@@ -23,6 +23,7 @@ random.shuffle(list)
 # calculate the average
 m = 0
 for i in range (n):
-    i = sequentialSearch(list, x)
-    if (i != None): m += i
-print(m/n)
+    pos = sequentialSearch(list, x)
+    if (pos != None): m += pos
+
+print('the position average is: ' + str(m/n))
