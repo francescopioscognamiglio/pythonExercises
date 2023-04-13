@@ -13,9 +13,9 @@ def extractMax(A, size):
     A[0] = A[size]
     A.pop(size)
     # fix the heap to satisfy this rule: each node is greater than or equal to its children
-    heapify(v, len(v), 0)
+    heapify(v, 0, len(v))
 
-def heapify(A, size, i):
+def heapify(A, i, size):
     # retrieve the node position
     N = i
     # retrieve the children positions
@@ -30,12 +30,13 @@ def heapify(A, size, i):
     A[i], A[N] = A[N], A[i]
 
     # call the procedure on the sub heap
-    heapify(A, size, N)
+    heapify(A, N, size)
 
-def buildHeap(A, size):
+def buildHeap(A):
     # iterate on each parent node
+    size = len(A)
     for i in range((size-2)//2, -1, -1): # reverse for
-        heapify(A, size, i)
+        heapify(A, i, size)
 
 
 v = [18, 16, 17, 12, 15, 10, 1, 8, 4, 14, 11, 3]
