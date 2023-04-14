@@ -47,7 +47,9 @@ def printTree(node, h = 0):
     -------
     None.
     """
-    if node == None: return
+    if node == None:
+        print(h*'|', '-')
+        return
     print(h*'|', node.key)
     printTree(node.left, h+1)
     printTree(node.right, h+1)
