@@ -35,7 +35,7 @@ def createTree(n, m):
     node.right = createTree(n-1-x, m) # n-1-x nodes in the right side
     return node
 
-def printTree(node):
+def printTree(node, h = 0):
     """
     Prints out the entire tree.
     
@@ -48,9 +48,9 @@ def printTree(node):
     None.
     """
     if node == None: return
-    print(node.key)
-    printTree(node.left)
-    printTree(node.right)
+    print(h*'|', node.key)
+    printTree(node.left, h+1)
+    printTree(node.right, h+1)
 
 
 # build manually
