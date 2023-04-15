@@ -14,11 +14,11 @@ class NodeBT:
         self.left = left
         self.right = right
 
-def retrieveHeight(node, h = 0):
-    if node == None: return h-1
-    hleft = retrieveHeight(node.left, h+1)
-    hright = retrieveHeight(node.right, h+1)
-    return max(hleft, hright)
+def retrieveHeight(node):
+    if node == None: return -1
+    hleft = retrieveHeight(node.left)
+    hright = retrieveHeight(node.right)
+    return max(hleft, hright) + 1
 
 
 root = NodeBT(5)
