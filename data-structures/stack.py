@@ -27,10 +27,14 @@ top = push(top, Stack(11))
 top = push(top, Stack(3))
 top = push(top, Stack(63))
 node, top = pop(top)
+assert node.key == 63
 print(node.key)
 node, top = pop(top)
+assert node.key == 3
 print(node.key)
 node, top = pop(top)
+assert node.key == 11
 print(node.key)
 node, top = pop(top)
+assert node.key == 5
 print(node.key)
