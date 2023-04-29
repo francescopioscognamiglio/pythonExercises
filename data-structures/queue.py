@@ -61,7 +61,7 @@ def dequeue(head, tail):
 
     """
     if head == None: return None, None, None # empty queue
-    node = head
+    node = head # attention at mutable objects: node and head refer to the same object
     head = node.next
     node.next = None
     if head == None: tail = None # empty queue
