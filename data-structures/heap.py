@@ -6,14 +6,16 @@ Created on Thu Apr  6 18:58:13 2023
 @author: scognamigliofrancescopio@gmail.com
 """
 
-## remove the maximux (it is the first element: A[i])
+## remove the maximum (it is the first element: A[i])
 def extractMax(A, size):
+    max = A[0]
     # move the last element into the first
     size -= 1
     A[0] = A[size]
     A.pop(size)
     # fix the heap to satisfy this rule: each node is greater than or equal to its children
-    heapify(v, 0, len(v))
+    heapify(A, 0, size)
+    return max
 
 def heapify(A, i, size):
     # retrieve the node position
@@ -41,5 +43,7 @@ def buildHeap(A):
 
 v = [18, 16, 17, 12, 15, 10, 1, 8, 4, 14, 11, 3]
 print(v)
+extractMax(v, len(v))
+extractMax(v, len(v))
 extractMax(v, len(v))
 print(v)
